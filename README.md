@@ -10,7 +10,7 @@ sitesinde yapılan taramada orta seviyeli olarak CVE-2014-4078 sonucu elde edild
 # Sqlmap
 
 Sqlmapte yapılan testler sonucunda veritabanı olarak PostgreSQL kullanıldığı tespit edildi. Bunun yanı sıra yapılan testler sonucunda belirli çıktılar elde edildi.
-
+WAF ile korunduğu için bazı sql injectionlar denenemedi bunlar txtler içinde gözükmektedir.
 
 Bu test aşamasında yazılan kodlar:
 
