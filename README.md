@@ -5,7 +5,7 @@ Testler Sqlmap, Nikto, Nmap üzerinden yapılmıştır.
 # Nmap
 
 https://www.shodan.io/
-sitesinde yapılan taramada orta seviyeli olarak CVE-2014-4078 sonucu elde edildi ve ISS 8.5 kullanıyor kullanıldığı tespit edildi.
+sitesinde yapılan taramada orta seviyeli olarak CVE-2014-4078 sonucu elde edildi ve ISS 8.5 kullanıldığı tespit edildi.
 
 # Sqlmap
 
