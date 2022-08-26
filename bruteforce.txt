@@ -1,0 +1,143 @@
+Kabakuvvet saldırılarına karşı "https://www.mustso.org.tr/login.aspx" adresine
+saldırılırılması olasılığına karşı herhangi bir robot kontrolü ve ip banlanması
+yapılmıyor.Bir crunch aracı ile wordlist oluşturarak hydra aracılığı ile bruteforce
+atak denendi.Alınan sonuçlar aşağıdaki gibi fakat farklı araçlarlada deneme sınırı yok.
+
+Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2022-08-26 12:35:05
+[WARNING] Many SSH configurations limit the number of parallel tasks, it is recommended to reduce the tasks: use -t 4
+[DATA] max 16 tasks per 1 server, overall 16 tasks, 13450402 login tries (l:2/p:6725201), ~840651 tries per task
+[DATA] attacking ssh://151.80.40.80:22/
+[VERBOSE] Resolving addresses ... [VERBOSE] resolving done
+[INFO] Testing if password authentication is supported by ssh://root@151.80.40.80:22
+[ERROR] could not connect to ssh://151.80.40.80:22 - Timeout connecting to 151.80.40.80
+Hydra v9.3 (c) 2022 by van Hauser/THC & David Maciejak - Please do not use in military or secret service organizations, or for illegal purposes (this is non-binding, these *** ignore laws and ethics anyway).
+
+Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2022-08-26 12:36:28
+[WARNING] Many SSH configurations limit the number of parallel tasks, it is recommended to reduce the tasks: use -t 4
+[DATA] max 16 tasks per 1 server, overall 16 tasks, 13450402 login tries (l:2/p:6725201), ~840651 tries per task
+[DATA] attacking ssh://151.80.40.80:80/
+[VERBOSE] Resolving addresses ... [VERBOSE] resolving done
+[INFO] Testing if password authentication is supported by ssh://root@151.80.40.80:80
+[ERROR] could not connect to ssh://151.80.40.80:80 - Socket error: disconnected
+
+Reverse Ip lookup ile aynı sunucuyu paylaşan siteler;
+tr
+kirsehirtb.org.tr
+kuantummedikal.com
+kum.site.probase.com.tr
+kumlucatb.org.tr
+kutbo.org.tr
+magicalchange.net
+maltepe.site.probase.com.tr
+masuder.org.tr
+mayailaclama.com
+mefkurede.site.probase.com.tr
+mircekiraz.com
+mirsoft.com.tr
+muradiye.org.tr
+muradiye.site.probase.com.tr
+mustahsil.cankiritb.org.tr
+mustso.org.tr
+mutosb.org.tr
+muttso.org.tr
+muttso.site.probase.com.tr
+nazillitb.org.tr
+nigdetb.org.tr
+nitso.org.tr
+ns.bozuyuktso.tobb.org.tr
+ns.ceyhantb.tobb.org.tr
+ns1.probase.com.tr
+ns3556883.ip-151-80-40.eu
+odemisto.org.tr
+oduldanismanlik.com
+otelbaskent.com
+panel.mirsoft.com.tr
+platinsaglikhizmetleri.com
+plugin.animetakvimi.com
+privadomoda.com
+probase.com.tr
+pyl.animetakvimi.com
+sitso.org.tr
+sorguntso.org.tr
+sto.org.tr
+sungurlutb.org.tr
+tarsustb.gov.tr
+tarsustb.tobb.org.tr
+termetb.org.tr
+termetso.org.tr
+uslu.site.probase.com.tr
+webdernek.com
+www.alacatso.org.tr
+www.ankarapvctamiri.com
+www.ardahantso.org.tr
+www.bileciktso.org.tr
+www.bintso.org.tr
+www.bitlistso.org.tr
+www.bogazliyantso.org.tr
+www.bozuyuktso.org.tr
+www.bozuyuktso.tobb.org.tr
+www.bucaktso.org.tr
+www.bulancak-tso.org.tr
+www.burmosan.com.tr
+www.cankiritb.org.tr
+www.catso.org.tr
+www.cavdar.org.tr
+www.ceyhantb.org.tr
+www.ekremdoganayvakfi.com
+www.enkamuder.org.tr
+www.erdemlitso.org.tr
+www.eyaf.org.tr
+www.gediztso.org.tr
+www.genckalecikliler.com
+www.geredeliler.com
+www.geredetso.org.tr
+www.guzeltepemahallesi.com
+www.hatso.org.tr
+www.hopatso.org.tr
+www.kadirlitb.tobb.org.tr
+www.karssusuzkayadibi.com
+www.kilispolateliosb.org.tr
+www.kilistso.org.tr
+www.kilistso.tobb.org.tr
+www.kirsehirtb.org.tr
+www.kutbo.org.tr
+www.masuder.org.tr
+www.mustso.org.tr
+www.muttso.org.tr
+www.nazillitb.org.tr
+www.nigdetb.org.tr
+www.nitso.org.tr
+www.odemisto.org.tr
+www.oguzeliosb.org.tr
+www.probase.com.tr
+www.reyhanlitb.org.tr
+www.sorguntso.org.tr
+www.sto.org.tr
+www.sungurlutb.org.tr
+www.tarsustb.tobb.org.tr
+www.tekmarglobal.com
+www.termetb.org.tr
+www.termetso.org.tr
+www.yuksekovatso.org.tr
+www.ziletb.org.tr
+ytso.site.probase.com.tr
+yuksekovatso.org.tr
+ziletb.org.tr
+
+ Bu siteler içerisinde analiz yapıldığında bir tanesinin oluşturduğu zafiyet hepsini
+etkileyebilir.
+ Siteler içerisinde ssl sertifikası olmayanlar var saldırıya(ortadaki adam veya ağ 
+tabanlı saldırılar) maruz kalınırsa özel bilgiler çalınabilir.Bu durum 'mustso.org.tr'
+adresinide etkileyebilir.
+
+"https://www.ziletb.org.tr/login.aspx" sayfasında yapılan analize göre kullanıcı adı:root
+şifre:123456Aa olarak belirlenmiş. Bu bilginin bulunması "mustso.ort.tr" için sorun teşkil
+edebilir.
+
+ Http server olarak "Microsoft-IIS/8.5" kullanılması sorun teşkil edebilir.Güncel sürümün
+kullanılması tavsiye edilir.
+
+ TLS sertifikası yeterince güvenilir değil.Sertifikayı güvenilir bir yetkiliden satın 
+alındıysa, muhtemelen bir veya daha fazla ara sertifika yüklemeniz yeterlidir. 
+Sunucu platformunuz için bunu yaparken yardım almak için sertifika sağlayıcınıza başvurabilirsiniz.
+
