@@ -1,6 +1,6 @@
 # Bilgi Sistemleri ve Güvenliği
 
-Testler Sqlmap, Nikto, Nmap üzerinden yapılmıştır.
+Testler Sqlmap, Nikto, Nmap ve Wireshark üzerinden yapılmıştır.
 
 # Nmap
 
@@ -27,7 +27,7 @@ WAF ile korunduğu için bazı sql injectionlar denenemedi bunlar txtler içinde
 
 <br>
 
-# Testler (Wireshark) üzerinden yapılmıştır.
+# Wireshark
 
 ## 1. Bad TCP
 tcp.analysis.flags && !tcp.analysis.window_update && !tcp.analysis.keep_alive && !tcp.analysis.keep_alive_ack <br>
