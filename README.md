@@ -52,17 +52,17 @@ Varsayılan olarak, Wireshark'ın TCP ayırıcısı her TCP oturumunun durumunu 
 ### HTTP Kısmında [Checksum Status: Unverified] olduğundan dolayı bu kısımları mustso’nun düzeltemsi gerekiyor.
 
 ### Nikto
-#mustso.org.tr
-##X-Frame-Options
+# mustso.org.tr
+## X-Frame-Options
 Clickjacking, UI Redressing saldırılarına karşı önerilen ve tüm majör browserlar tarafından desteklenen bir güvenlik headerıdır.(Headerlar, Http'nin hem istek hem de yanıt mesajlarında yer alan ve mesajın meta bilgilerini taşıyan bölümlerdir.)Siber saldırgan, güvenli olarak görünen web sayfası kullanıcılarını güvensiz bir sayfaya yönlendirerek manipüle edebilir.
-##X-XSS-Protection
+## X-XSS-Protection
 Tarayıcıda XSS güvenlik filtresini devreye alarak bir XSS payloadının sayfada çalışmasını engelleyen headerdır.Bu zafiyet mustso.org.tr adresinin XSS ataklara karşı savunmasız olduğu anlamına gelir.
-##X-Content-Type-Options
+## X-Content-Type-Options
 Content-Type headerı ile içeriğin tipi belirtilmediği taktırda tarayıcı içeriği analiz ederek, kaynağı en doğru biçimde görüntülemeye çalışır.Özellikle upload fonksiyonlarıyla beraber, sniffing işlemi bir takım tehlikeler arz edebilir.Örneğin zararsız addedilen bir text dosyası upload ettildiğini varsayalım.Bu text dosyası eğer HTML ve script tagları, Javascript kodları içeriyorsa ve biz bu yüklenen dosyayı tekrar kullanıcıya sunarken bir Content-Type belirtmiyorsak, tarayıcı bu sayfanın içeriğini analiz ederek bunun text/html tipinde bir dosya olduğuna karar verecektir ve bu sayfadaki kodlar çalışacaktır.
-#mirsoft.com.tr
-##Entry '/LinkClick.aspx?*'
+# mirsoft.com.tr
+## Entry '/LinkClick.aspx?*'
 robots.txtde bulunan 'mirsoft.com.tr//LinkClick.aspx?*' adresi yasaklanmamış 500 hata kodu döndürüyor yani sunucu tabanlı bir sıkıntı.
-##robots.txt
+## robots.txt
 Girişler manuel olarak denendi ve bir açığa ulaşılamadı.
 
 
