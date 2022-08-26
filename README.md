@@ -30,15 +30,25 @@ WAF ile korunduğu için bazı sql injectionlar denenemedi bunlar txtler içinde
 # Testler (Wireshark) üzerinden yapılmıştır.
 
 ## 1. Bad TCP
-tcp.analysis.flags && !tcp.analysis.window_update && !tcp.analysis.keep_alive && !tcp.analysis.keep_alive_ack <br>
-Bad TCP 54 tane taradımız ağ’da bulduk, bunları göremek için github linkin’den ulaşabilirsiniz
+### tcp.analysis.flags && !tcp.analysis.window_update && !tcp.analysis.keep_alive && !tcp.analysis.keep_alive_ack <br>
+### Bad TCP 54 tane taradımız ağ’da bulduk, bunları göremek için github linkin’den ulaşabilirsiniz
 
 
 ## 2. ARP (Address Resulation Protocol)
-Tipik bir kullanım, bir IP adresinin (ör. 192.168.0.10) temel Ethernet adresine (ör. 01:02:03:04:05:06) eşlenmesidir. ARP bu adreslerin keşfedilme şekli olduğundan, genellikle bir konuşmanın başında ARP paketlerini görürsünüz.
-<br>Aşağıda 9 tane (ARP) paketini mustso’dan yakaladık. ARP bizim için önemli bir bilgidir.
+### Tipik bir kullanım, bir IP adresinin (ör. 192.168.0.10) temel Ethernet adresine (ör. 01:02:03:04:05:06) eşlenmesidir. ARP bu adreslerin keşfedilme şekli olduğundan, genellikle bir konuşmanın başında ARP paketlerini görürsünüz.
+### <br>Aşağıda 9 tane (ARP) paketini mustso’dan yakaladık. ARP bizim için önemli bir bilgidir.
 
 
 ## 3. HTTP (Hypertext Transfer Protocol)
-Çok fazla içerik türü(content types) En kiritik buldumuz kısımda Application buldundu kısımdır.
-Kötü amaçlı ve yazılım ararken kullandığınız etiket içerik türü ve uygulama türüdür.
+### Çok fazla içerik türü(content types) En kiritik buldumuz kısımda Application buldundu kısımdır.
+### Kötü amaçlı ve yazılım ararken kullandığınız etiket içerik türü ve uygulama türüdür.
+### Genelikle application ile başlayanları kötü amaçlı olarak kullanabiliriz, onları indirip ondan sonra deneyebiliriz ve eğer o uygulama çalışırsa hack ve kötü amaçlı olarak kullanabilir, o yüzden http protokolü çok önemli bir protokoldür.
+
+
+## 4. TCP (Transmission Control Protocol)
+### Varsayılan olarak, Wireshark'ın TCP ayırıcısı her TCP oturumunun durumunu izler ve sorunlar veya olası sorunlar algılandığında ek bilgi sağlar. Bir yakalama dosyası ilk açıldığında analiz her TCP paketi için bir kez yapılır. Paketler, paket listesinde göründükleri sırayla işlenir.
+
+1. Bad TCP 
+Kısmında [Checksum Status: Unverified] olduğundan dolayı bu kısımları mustso’nun düzeltemsi gerekiyor.
+12. HTTP 
+Kısmında [Checksum Status: Unverified] olduğundan dolayı bu kısımları mustso’nun düzeltemsi gerekiyor.
